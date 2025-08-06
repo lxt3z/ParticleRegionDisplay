@@ -19,10 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-// FAWE compatibility: Try to use FAWE's adapter if available, fall back to WorldGuard's
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
-// Uncomment the following line if FAWE is guaranteed to be present
-// import com.fastasyncworldedit.core.bukkit.adapter.BukkitAdapter;
 
 public class ParticleManager {
 
@@ -105,7 +102,7 @@ public class ParticleManager {
         Location playerLocation = player.getLocation();
         // Convert Bukkit World to WorldEdit World
         com.sk89q.worldedit.world.World world = BukkitAdapter.adapt(player.getWorld());
-        // Use Vector3 for WorldGuard 7.0.9
+        // Using Vector3 for WorldGuard 7.0.9
         ApplicableRegionSet regions = WorldGuard.getInstance().getPlatform().getRegionContainer()
                 .get(world).getApplicableRegions(Vector3.at(
                         playerLocation.getX(),
@@ -161,4 +158,5 @@ public class ParticleManager {
     private boolean isNearBoundary(double value, double min, double max, double threshold) {
         return Math.abs(value - min) <= threshold || Math.abs(value - max) <= threshold;
     }
+
 }
