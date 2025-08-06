@@ -1,9 +1,0 @@
-name: ParticleRegionDisplay
-version: '1.1'
-main: su.lxt3z.particleregiondisplay.Main
-api-version: '1.20'
-authors: [lxt3z]
-depend: [ WorldGuard, FastAsyncWorldEdit ]
-commands:
-  toggleparticles:
-    usage: /<command>
